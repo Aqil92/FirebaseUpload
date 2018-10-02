@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -47,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private StorageReference storageReference;
     private DatabaseReference mDatabase;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonChoose.setOnClickListener(this);
         buttonUpload.setOnClickListener(this);
         textViewShow.setOnClickListener(this);
+
     }
 
     private void showFileChooser() {
@@ -140,8 +138,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             progressDialog.setMessage("Uploaded " + ((int) progress) + "%...");
                         }
                     });
-        } else {
-            //display an error if no file is selected
         }
     }
 
@@ -155,4 +151,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, ShowImagesActivity.class));
         }
     }
+
 }
